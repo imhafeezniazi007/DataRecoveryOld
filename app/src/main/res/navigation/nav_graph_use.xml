@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph.xml"
+    app:startDestination="@id/fragmentOne">
+
+    <fragment
+        android:id="@+id/fragmentOne"
+        android:name="com.example.datarecoverynew.views.fragments.howToUse.FragmentOne"
+        android:label="fragment_one"
+        tools:layout="@layout/fragment_one">
+        <action
+            android:id="@+id/navigation_one_to_two"
+            app:destination="@id/fragmentTwo"
+            app:popUpTo="@id/fragmentOne"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentTwo"
+        android:name="com.example.datarecoverynew.views.fragments.howToUse.FragmentTwo"
+        android:label="fragment_two"
+        tools:layout="@layout/fragment_two">
+        <action
+            android:id="@+id/navigation_two_to_ad"
+            app:destination="@id/adFragment" />
+        <action
+            android:id="@+id/navigation_two_to_three"
+            app:destination="@id/fragmentFour" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adFragment"
+        android:name="com.example.datarecoverynew.views.fragments.howToUse.AdFragment"
+        android:label="fragment_ad"
+        tools:layout="@layout/fragment_ad">
+
+        <action
+            android:id="@+id/navigation_ad_to_four"
+            app:destination="@id/fragmentFour" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentFour"
+        android:name="com.example.datarecoverynew.views.fragments.howToUse.FragmentFour"
+        android:label="fragment_four"
+        tools:layout="@layout/fragment_four">
+
+        <action
+            android:id="@+id/navigation_four_to_five"
+            app:destination="@id/fragmentFive" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentFive"
+        android:name="com.example.datarecoverynew.views.fragments.howToUse.FragmentFive"
+        android:label="fragment_five"
+        tools:layout="@layout/fragment_five" />
+</navigation>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="splash_bg_color" format="color" />
+    <attr name="splash_button_bg_color" format="color" />
+    <attr name="white_text_color" format="color" />
+    <attr name="yellow_text_color" format="color" />
+    <attr name="black_text_color" format="color" />
+    <attr name="bottom_bg_color" format="color" />
+    <attr name="bottom_item_selected_color" format="color" />
+    <attr name="bottom_item_unselected_color" format="color" />
+    <attr name="custom_blue_color" format="color" />
+    <attr name="light_blue_text_color" format="color" />
+    <attr name="purchase_banner_bg_color" format="color" />
+    <attr name="bg_color" format="color" />
+    <attr name="saved_bg_color" format="color" />
+    <attr name="blue_bg_color" format="color" />
+    <attr name="dialog_bg_color" format="color" />
+    <attr name="gray_text_color" format="color" />
+    <attr name="red_bg_color" format="color" />
+    <attr name="custom_white" format="color" />
+    <attr name="light_black_text_color" format="color" />
+    <attr name="light_gray_text_color" format="color" />
+    <attr name="side_menu_bg_color" format="color" />
+    <attr name="side_menu_button_bg_color" format="color" />
+    <attr name="audio_player_bg_color" format="color" />
+    <attr name="seekbar_fill_color" format="color" />
+    <attr name="seekbar_update_color" format="color" />
+    <attr name="drawer_icon_tint" format="color" />
+    <attr name="search_language_bg_stroke" format="color" />
+    <attr name="search_language_hint_text_color" format="color" />
+    <attr name="search_language_border_color" format="color" />
+    <attr name="side_menu_next_icon_tint" format="color" />
+    <attr name="back_icon_tint" format="color" />
+    <attr name="side_menu_back_icon_tint" format="color" />
+    <attr name="side_menu_text_color" format="color" />
+    <attr name="search_language_bg_color" format="color" />
+    <attr name="search_icon_tint" format="color" />
+    <attr name="bg_gradient" format="reference" />
+    <attr name="start_gradient_color" format="color" />
+    <attr name="end_gradient_color" format="color" />
+    <attr name="splash_bg_gradient" format="reference" />
+    <attr name="splash_start_gradient_color" format="color" />
+    <attr name="splash_end_gradient_color" format="color" />
+    <attr name="side_menu_icons_tint" format="color" />
+    <attr name="dialogue_button_bg" format="color" />
+    <attr name="dialogue_button_text_color" format="color" />
+    <attr name="audio_bg_color" format="color" />
+    <attr name="audio_player_icon_tint" format="color" />
+    <attr name="dialogue_button_bg_color" format="color" />
+    <attr name="exit_dialog_bg_color" format="color" />
+    <attr name="exit_dialog_text_color" format="color" />
+    <attr name="exit_dialog_yes_btn_text_color" format="color" />
+    <attr name="exit_dialog_no_btn_text_color" format="color" />
+    <attr name="exit_dialog_yes_btn_bg_color" format="color" />
+    <attr name="exit_dialog_no_btn_bg_color" format="color" />
+    <attr name="premium_buttom_bg_color" format="color" />
+    <attr name="premium_top_bg_gradient" format="reference" />
+    <attr name="premium_start_gradient_color" format="color" />
+    <attr name="premium_end_gradient_color" format="color" />
+    <attr name="premium_text_color" format="color" />
+    <attr name="premium_banner_bg_color" format="color" />
+    <attr name="watc_Ad_bg_color" format="color" />
+    <attr name="watc_Ad_label_color" format="color" />
+    <attr name="watc_Ad_button_bg_color" format="color" />
+    <attr name="watc_Ad_button_text_color" format="color" />
+
+
+    <declare-styleable name="RoundedImageView">
+        <attr name="radius" format="dimension"/>
+        <attr name="topLeftRadius" format="dimension" />
+        <attr name="topRightRadius" format="dimension" />
+        <attr name="bottomLeftRadius" format="dimension" />
+        <attr name="bottomRightRadius" format="dimension" />
+        <attr name="android:adjustViewBounds" format="boolean"/>
+    </declare-styleable>
+</resources>

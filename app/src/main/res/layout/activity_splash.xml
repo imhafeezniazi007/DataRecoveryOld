@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?splash_bg_gradient"
+    tools:context=".views.activities.SplashActivity">
+
+    <ImageView
+        android:id="@+id/logoIV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:elevation="@dimen/_2sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv1"
+        android:text="@string/deleted"
+        android:layout_marginBottom="-5dp"
+        style="@style/SemiBoldFont"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:textColor="?yellow_text_color"
+        android:textSize="@dimen/_26ssp"
+        />
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv2"
+        android:text="@string/recover_lost_or"
+        style="@style/RegularFont"
+        android:textColor="?white_text_color"
+        android:textSize="@dimen/_26ssp"
+        android:layout_marginBottom="-5dp"
+        android:layout_marginStart="@dimen/_10sdp"
+        />
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tv2"
+        app:layout_constraintTop_toTopOf="@id/tv2"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@id/tv2"
+        android:text="@string/files"
+        style="@style/RegularFont"
+        android:textColor="?white_text_color"
+        android:textSize="@dimen/_26ssp"
+
+        />
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn"
+        android:text="@string/quickly_and_neasily"
+        style="@style/LightTheme"
+        android:textColor="?white_text_color"
+        android:textSize="@dimen/_26ssp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/button_rounded_bg"
+        android:paddingVertical="@dimen/_3sdp"
+        android:textSize="@dimen/_12ssp"
+        android:text="@string/get_started"
+        android:textColor="?white_text_color"
+        style="@style/MediumFont"
+        android:paddingHorizontal="@dimen/_35sdp"
+        android:backgroundTint="?splash_button_bg_color"
+        android:layout_marginBottom="@dimen/_25sdp"/>
+
+    <LinearLayout
+        android:id="@+id/adloadingscreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationZ="@dimen/_8sdp"
+        android:background="@color/main800"
+        android:visibility="invisible">
+
+        <include
+
+            layout="@layout/ad_load_screen"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

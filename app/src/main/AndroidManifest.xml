@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".AppController"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/LightTheme"
+        tools:targetApi="31">
+        <activity
+            android:name=".views.activities.HowToUseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.LoaderDialogActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.PermissionScreenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.SelectLanguagesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.VedioPlayerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.PremiumActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.LanguageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.SideMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.DuplicateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.SavedFilesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.SavedVediosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.SavedAudiosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.SavedImagesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.ScanFilesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.ScanVideosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.ScanAudiosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.CrashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.ScanImagesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/fileprovider" />
+        </provider> <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7657493298294112~3468727597" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+    </application>
+
+</manifest>

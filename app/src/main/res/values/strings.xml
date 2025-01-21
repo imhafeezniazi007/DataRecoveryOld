@@ -1,0 +1,110 @@
+<resources>
+    <string name="app_name" translatable="false">Restore Data &amp; Photos Recovery</string>
+    <string name="app_preferences" translatable="false">App Preferences</string>
+
+    <string name="snackbar_text">Recovered Successfully\nLocation:/storage/emulated/0/pictures/\nDataRecovery</string>
+    <string name="ok">OK</string>
+    <string name="get_started">Get Started</string>
+    <string name="quickly_and_neasily">quickly and easily.</string>
+    <string name="deleted">deleted</string>
+    <string name="deletedd">Deleted</string>
+    <string name="files">files</string>
+    <string name="filess">Files</string>
+    <string name="recover_lost_or">Recover\nlost or</string>
+    <string name="data_recovery">Data Recovery</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="saved">Saved</string>
+    <string name="themes">Themes</string>
+    <string name="duplicate">Duplicate</string>
+    <string name="data_recover">Data Recover</string>
+    <string name="recover_deleted_files_easily">Recover deleted files easily.</string>
+    <string name="images">Images</string>
+    <string name="videos">Videos</string>
+    <string name="audios">Audios</string>
+    <string name="_12_month">1 Month</string>
+    <string name="best_offer">Best Offer</string>
+    <string name="_33_00_usd">33.00 USD</string>
+    <string name="actual_price_87_72_usd">Actual price 87.72 USD</string>
+    <string name="yearly">Monthly</string>
+    <string name="saved_images">Saved Images</string>
+    <string name="saved_videos">Saved Videos</string>
+    <string name="saved_files">Saved Files</string>
+    <string name="saved_audios">Saved Audios</string>
+    <string name="unlock">Unlock</string>
+    <string name="no_data_dound">No Data Found</string>
+    <string name="recover">Recover</string>
+    <string name="try_again_later">Try again later</string>
+    <string name="recover_image_successfully">Recover Image Successfully</string>
+    <string name="image_deleted_successfully">Image deleted successfully</string>
+    <string name="total_files_scanned">Total Files Scanned</string>
+    <string name="files_found">Files Found</string>
+    <string name="recoverable_files_found">Recoverable Files Found</string>
+    <string name="delete">Delete</string>
+    <string name="something_went_wrong">Some thing went wrong</string>
+    <string name="mb">MB</string>
+    <string name="no_item_selected">No item selected</string>
+    <string name="all_files_deleted">All files deleted successfully</string>
+    <string name="group_no">Group No</string>
+    <string name="group">Group</string>
+    <string name="contacts">Contacts</string>
+    <string name="files_deleted_successfully">Files Deleted Successfully</string>
+    <string name="scan_images">Scan Images</string>
+    <string name="scan_videos">Scan Videos</string>
+    <string name="scan_audios">Scan Audios</string>
+    <string name="scan_files">Scan Files</string>
+    <string name="delete_duplicate">Delete Duplicate</string>
+    <string name="duplicate_images">Duplicate Images</string>
+    <string name="duplicate_videos">Duplicate Videos</string>
+    <string name="duplicate_audios">Duplicate Audios</string>
+    <string name="duplicate_files">Duplicate Files</string>
+    <string name="duplicate_contacts">Duplicate Contacts</string>
+    <string name="premium">Premium</string>
+    <string name="menu">Menu</string>
+    <string name="share">Share</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="language">Language</string>
+    <string name="more_apps">More Apps</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="choose_language">Choose Language</string>
+    <string name="go_premium">Go Premium</string>
+    <string name="upgrade_to_premium_and_get_all_nthe_features_available">Upgrade to premium and get all\nthe features available</string>
+    <string name="_1_month">1 Month</string>
+    <string name="upgrade_now">Upgrade Now</string>
+    <string name="continue_with_basic_plan">Continue With Basic Plan</string>
+    <string name="files_scanned">Files scanned</string>
+    <string name="images_found">Images Found</string>
+    <string name="audios_found">Audios Found</string>
+    <string name="documents_found">Documents Found</string>
+    <string name="vedios_found">Videos Found</string>
+    <string name="video_completed">Video Completed</string>
+    <string name="error_playing_error">Error playing error</string>
+    <string name="find_a_language">Find a language</string>
+    <string name="enter_value">Enter value</string>
+    <string name="basic">Basic</string>
+    <string name="unlimited_data_recover">Unlimited Data Recover</string>
+    <string name="upto_500">Up to 500</string>
+    <string name="cloud_backup">Cloud Backup</string>
+    <string name="no_ads">No Ads</string>
+    <string name="click_here_to_view_more_items">Click here to view more items</string>
+    <string name="are_you_sure_you_want_to_exit">Are you sure you want to exit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ad_attribution">AD</string>
+    <string name="loading">Loading</string>
+    <string name="loading_ad">Loading AD..</string>
+    <string name="watch_ad_to_view_all_recovered_items" translatable="false">Watch Ad to view all recovered items</string>
+    <string name="or" translatable="false">OR</string>
+    <string name="premium_version" translatable="false">Premium Version</string>
+
+    <string name="facebook_app_id" translatable="false">1008480713750761</string>
+    <string name="data_recovery_is_the_process_of_restoring_lost_or_damaged_data">Data recovery is the process of restoring lost or damaged data.</string>
+    <string name="how_to_use">How to Use</string>
+    <string name="next">Next</string>
+    <string name="videos_recover">Videos Recover</string>
+    <string name="video_recovery_is_the_process_of_retrieving_lost_or_damaged_video_files">Video recovery is the process of retrieving lost or damaged video files.</string>
+    <string name="deleting_duplicates_removes_identical_photos_and_videos_to_free_up_space">Deleting duplicates removes identical photos and videos to free up space.</string>
+    <string name="scanning_files">Scanning Files</string>
+    <string name="scanning_data_involves_searching_for_specific_information_or_issues_in_files">Scanning data involves searching for specific information or issues in files.</string>
+</resources>

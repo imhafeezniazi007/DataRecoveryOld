@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.ThemesFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:layout_margin="@dimen/_25sdp"
+        android:background="@drawable/rounded_bg"
+        android:backgroundTint="?custom_blue_color"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:src="@drawable/ic_home_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/l1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="-10dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/SemiBoldFont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/deletedd"
+                android:textColor="?white_text_color"
+                android:textSize="@dimen/_24ssp" />
+
+            <TextView
+                style="@style/RegularFont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/data_recover"
+                android:textColor="?white_text_color"
+                android:textSize="@dimen/_18ssp" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/RegularFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recover_deleted_files_easily"
+            android:textColor="?light_blue_text_color"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="@id/l1"
+            app:layout_constraintTop_toBottomOf="@id/l1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tv"
+        style="@style/MediumFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="@string/themes"
+        android:textColor="?black_text_color"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintStart_toStartOf="@id/layout1"
+        app:layout_constraintTop_toBottomOf="@id/layout1" />
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@+id/btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn"
+        style="@style/MediumFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/rounded_bg"
+        android:backgroundTint="?blue_bg_color"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/_40sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="@string/unlock"
+        android:textColor="?white_text_color"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/adloadingscreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main800"
+        android:translationZ="@dimen/_8sdp"
+        android:visibility="invisible">
+
+        <include
+
+            layout="@layout/ad_load_screen"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
