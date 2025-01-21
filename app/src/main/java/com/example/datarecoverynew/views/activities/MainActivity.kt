@@ -62,13 +62,7 @@ class MainActivity : BaseActivity() {
             binding.adLoadingTv.visibility = View.GONE
             binding.border1.visibility = View.GONE
         } else {
-            val adSettings = AppSharedPref.adSettings
-
-            if (adSettings.addSettings?.AdmobBanner != true) {
-
-            } else {
-                loadAdmobBanner(this@MainActivity, binding.adView)
-            }
+            loadAdmobBanner(this@MainActivity, binding.adView)
         }
     }
 

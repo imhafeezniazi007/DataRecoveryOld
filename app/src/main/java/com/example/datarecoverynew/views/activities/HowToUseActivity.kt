@@ -92,12 +92,7 @@ class HowToUseActivity : BaseActivity() {
         if (AppPreferences.getInstance(this).isAppPurchased) {
             binding.constraintLayout2.visibility = View.GONE
         } else {
-            val adSettings = AppSharedPref.adSettings
-
-            if (adSettings.addSettings?.AdmobBanner != true) {
-            } else {
-                loadAdmobBanner(this@HowToUseActivity, binding.adView)
-            }
+            loadAdmobBanner(this@HowToUseActivity, binding.adView)
         }
     }
 

@@ -118,13 +118,7 @@ class SideMenuActivity : BaseActivity() {
             binding.adLoadingTv.visibility = View.GONE
             binding.border1.visibility = View.GONE
         } else {
-            val adSettings = AppSharedPref.adSettings
-
-            if (adSettings.addSettings?.AdmobBanner != true) {
-
-            } else {
-                loadAdmobBanner(this@SideMenuActivity, binding.adView)
-            }
+            loadAdmobBanner(this@SideMenuActivity, binding.adView)
         }
     }
 
