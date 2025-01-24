@@ -123,6 +123,8 @@ class SplashActivity : BaseActivity() {
                     remoteConfig.getBoolean("isNativeUseEnabled")
                 val isBannerSideNavEnabled =
                     remoteConfig.getBoolean("isBannerSideNavEnabled")
+                val isPremiumHowToUseEnabled =
+                    remoteConfig.getBoolean("isPremiumHowToUseEnabled")
 
                 sharedPref.setAdId(res)
                 sharedPref.setIsNativeSavedEnabled(resNtvEn)
@@ -151,6 +153,7 @@ class SplashActivity : BaseActivity() {
                 sharedPref.setIsNativeExitEnabled(isNativeExitEnabled)
                 sharedPref.setIsNativeUseEnabled(isNativeUseEnabled)
                 sharedPref.setIsBannerSideNavEnabled(isBannerSideNavEnabled)
+                sharedPref.setIsPremiumHowToUseEnabled(isPremiumHowToUseEnabled)
             } else {
                 remoteConfig.setDefaultsAsync(R.xml.remote_config_defaults)
 
@@ -207,6 +210,8 @@ class SplashActivity : BaseActivity() {
                     remoteConfig.getBoolean("isNativeUseEnabled")
                 val isBannerSideNavEnabled =
                     remoteConfig.getBoolean("isBannerSideNavEnabled")
+                val isPremiumHowToUseEnabled =
+                    remoteConfig.getBoolean("isPremiumHowToUseEnabled")
 
                 sharedPref.setAdId(res)
                 sharedPref.setIsNativeSavedEnabled(resNtvEn)
@@ -235,6 +240,7 @@ class SplashActivity : BaseActivity() {
                 sharedPref.setIsNativeExitEnabled(isNativeExitEnabled)
                 sharedPref.setIsNativeUseEnabled(isNativeUseEnabled)
                 sharedPref.setIsBannerSideNavEnabled(isBannerSideNavEnabled)
+                sharedPref.setIsPremiumHowToUseEnabled(isPremiumHowToUseEnabled)
             }
         }
 
@@ -270,22 +276,18 @@ class SplashActivity : BaseActivity() {
                         SubscriptionsConstants.isUserSubscribed = sub
                         if (!AppPreferences.getInstance(this@SplashActivity).isAppPurchased) {
                             if (hasNetworkAvailable(this@SplashActivity)) {
-                                val adSettings = AppSharedPref.adSettings
                                 val adId =
                                     AdDatabaseUtil.getAdmobInterstitialAdId(this@SplashActivity)
-                                if (adSettings.addSettings?.AdmobInt != true) {
-                                    goNext()
-                                } else {
-                                    Log.d("de_Ads", "Ad is on and ad id is $adId")
-                                    binding.adloadingscreen.isVisible = true
-                                    AppController.splshinterstialAd.loadInterStialAd(
-                                        this@SplashActivity,
-                                        adId
-                                    ) {
-                                        AppController.splshinterstialAd.show_Interstial_Ad(this@SplashActivity) {
-                                            binding.adloadingscreen.isVisible = false
-                                            goNext()
-                                        }
+
+                                Log.d("de_Ads", "Ad is on and ad id is $adId")
+                                binding.adloadingscreen.isVisible = true
+                                AppController.splshinterstialAd.loadInterStialAd(
+                                    this@SplashActivity,
+                                    adId
+                                ) {
+                                    AppController.splshinterstialAd.show_Interstial_Ad(this@SplashActivity) {
+                                        binding.adloadingscreen.isVisible = false
+                                        goNext()
                                     }
 
                                 }

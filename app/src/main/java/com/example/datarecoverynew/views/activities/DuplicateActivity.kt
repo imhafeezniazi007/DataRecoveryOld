@@ -246,72 +246,57 @@ class DuplicateActivity : BaseActivity() {
 
     private fun showHighECPM(from: String) {
         Log.d("inter_ecpm", "showHighECPM: ")
-        val adSettings = AppSharedPref.adSettings
         val adId = sharedPreferences.getInterstitialHighId()
 
-        if (adSettings.addSettings?.AdmobInt != true) {
-
-        } else {
-            binding.adloadingscreen.isVisible = true
-            AppController.splshinterstialAd.loadInterStialAd(
-                this,
-                adId
-            ) { isLoaded ->
-                if (isLoaded) {
-                    AppController.splshinterstialAd.show_Interstial_Ad(this) {
-                        binding.adloadingscreen.isVisible = false
-                        deleteDuplicate(from)
-                    }
-                } else {
-                    showMediumECPM(from)
+        binding.adloadingscreen.isVisible = true
+        AppController.splshinterstialAd.loadInterStialAd(
+            this,
+            adId
+        ) { isLoaded ->
+            if (isLoaded) {
+                AppController.splshinterstialAd.show_Interstial_Ad(this) {
+                    binding.adloadingscreen.isVisible = false
+                    deleteDuplicate(from)
                 }
+            } else {
+                showMediumECPM(from)
             }
         }
     }
 
     private fun showMediumECPM(from: String) {
         Log.d("inter_ecpm", "showMediumECPM: ")
-        val adSettings = AppSharedPref.adSettings
 
         val adId = sharedPreferences.getInterstitialMediumId()
 
-        if (adSettings.addSettings?.AdmobInt != true) {
-
-        } else {
-            binding.adloadingscreen.isVisible = true
-            AppController.splshinterstialAd.loadInterStialAd(
-                this,
-                adId
-            ) { isLoaded ->
-                if (isLoaded) {
-                    AppController.splshinterstialAd.show_Interstial_Ad(this) {
-                        binding.adloadingscreen.isVisible = false
-                        deleteDuplicate(from)
-                    }
-                } else {
-                    showAutoECPM(from)
+        binding.adloadingscreen.isVisible = true
+        AppController.splshinterstialAd.loadInterStialAd(
+            this,
+            adId
+        ) { isLoaded ->
+            if (isLoaded) {
+                AppController.splshinterstialAd.show_Interstial_Ad(this) {
+                    binding.adloadingscreen.isVisible = false
+                    deleteDuplicate(from)
                 }
+            } else {
+                showAutoECPM(from)
             }
         }
     }
 
     private fun showAutoECPM(from: String) {
         Log.d("inter_ecpm", "showAutoECPM: ")
-        val adSettings = AppSharedPref.adSettings
         val adId = AdDatabaseUtil.getAdmobInterstitialAdId(this)
 
-        if (adSettings.addSettings?.AdmobInt != true) {
-
-        } else {
-            binding.adloadingscreen.isVisible = true
-            AppController.splshinterstialAd.loadInterStialAd(
-                this,
-                adId
-            ) {
-                AppController.splshinterstialAd.show_Interstial_Ad(this) {
-                    binding.adloadingscreen.isVisible = false
-                    deleteDuplicate(from)
-                }
+        binding.adloadingscreen.isVisible = true
+        AppController.splshinterstialAd.loadInterStialAd(
+            this,
+            adId
+        ) {
+            AppController.splshinterstialAd.show_Interstial_Ad(this) {
+                binding.adloadingscreen.isVisible = false
+                deleteDuplicate(from)
             }
         }
     }

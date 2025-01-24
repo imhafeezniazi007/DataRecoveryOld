@@ -89,67 +89,52 @@ class ScanImagesActivity : BaseActivity() {
 
 
     private fun showHighECPM() {
-        val adSettings = AppSharedPref.adSettings
         val adId = sharedPreferences.getInterstitialHighId()
 
-        if (adSettings.addSettings?.AdmobInt != true) {
-
-        } else {
-            binding.adloadingscreen.isVisible = true
-            AppController.splshinterstialAd.loadInterStialAd(
-                this, adId
-            ) { isLoaded ->
-                if (isLoaded) {
-                    AppController.splshinterstialAd.show_Interstial_Ad(this) {
-                        binding.adloadingscreen.isVisible = false
-                        proceed()
-                    }
-                } else {
-                    showMediumECPM()
+        binding.adloadingscreen.isVisible = true
+        AppController.splshinterstialAd.loadInterStialAd(
+            this, adId
+        ) { isLoaded ->
+            if (isLoaded) {
+                AppController.splshinterstialAd.show_Interstial_Ad(this) {
+                    binding.adloadingscreen.isVisible = false
+                    proceed()
                 }
+            } else {
+                showMediumECPM()
             }
         }
     }
 
     private fun showMediumECPM() {
-        val adSettings = AppSharedPref.adSettings
 
         val adId = sharedPreferences.getInterstitialMediumId()
 
-        if (adSettings.addSettings?.AdmobInt != true) {
-
-        } else {
-            binding.adloadingscreen.isVisible = true
-            AppController.splshinterstialAd.loadInterStialAd(
-                this, adId
-            ) { isLoaded ->
-                if (isLoaded) {
-                    AppController.splshinterstialAd.show_Interstial_Ad(this) {
-                        binding.adloadingscreen.isVisible = false
-                        proceed()
-                    }
-                } else {
-                    showAutoECPM()
+        binding.adloadingscreen.isVisible = true
+        AppController.splshinterstialAd.loadInterStialAd(
+            this, adId
+        ) { isLoaded ->
+            if (isLoaded) {
+                AppController.splshinterstialAd.show_Interstial_Ad(this) {
+                    binding.adloadingscreen.isVisible = false
+                    proceed()
                 }
+            } else {
+                showAutoECPM()
             }
         }
     }
 
     private fun showAutoECPM() {
-        val adSettings = AppSharedPref.adSettings
         val adId = AdDatabaseUtil.getAdmobInterstitialAdId(this)
 
-        if (adSettings.addSettings?.AdmobInt != true) {
-
-        } else {
-            binding.adloadingscreen.isVisible = true
-            AppController.splshinterstialAd.loadInterStialAd(
-                this, adId
-            ) {
-                AppController.splshinterstialAd.show_Interstial_Ad(this) {
-                    binding.adloadingscreen.isVisible = false
-                    proceed()
-                }
+        binding.adloadingscreen.isVisible = true
+        AppController.splshinterstialAd.loadInterStialAd(
+            this, adId
+        ) {
+            AppController.splshinterstialAd.show_Interstial_Ad(this) {
+                binding.adloadingscreen.isVisible = false
+                proceed()
             }
         }
     }
@@ -468,67 +453,52 @@ class ScanImagesActivity : BaseActivity() {
 
 
     private fun recoverShowHighECPM(imageDialog: AlertDialog, file: File) {
-        val adSettings = AppSharedPref.adSettings
         val adId = sharedPreferences.getInterstitialMediumId()
 
-        if (adSettings.addSettings?.AdmobInt != true) {
-
-        } else {
-            binding.adloadingscreen.isVisible = true
-            AppController.splshinterstialAd.loadInterStialAd(
-                this, adId
-            ) { isLoaded ->
-                if (isLoaded) {
-                    AppController.splshinterstialAd.show_Interstial_Ad(this) {
-                        binding.adloadingscreen.isVisible = false
-                        recover(imageDialog, file)
-                    }
-                } else {
-                    recoverShowMediumECPM(imageDialog, file)
+        binding.adloadingscreen.isVisible = true
+        AppController.splshinterstialAd.loadInterStialAd(
+            this, adId
+        ) { isLoaded ->
+            if (isLoaded) {
+                AppController.splshinterstialAd.show_Interstial_Ad(this) {
+                    binding.adloadingscreen.isVisible = false
+                    recover(imageDialog, file)
                 }
+            } else {
+                recoverShowMediumECPM(imageDialog, file)
             }
         }
     }
 
     private fun recoverShowMediumECPM(imageDialog: AlertDialog, file: File) {
-        val adSettings = AppSharedPref.adSettings
 
         val adId = sharedPreferences.getInterstitialMediumId()
 
-        if (adSettings.addSettings?.AdmobInt != true) {
-
-        } else {
-            binding.adloadingscreen.isVisible = true
-            AppController.splshinterstialAd.loadInterStialAd(
-                this, adId
-            ) { isLoaded ->
-                if (isLoaded) {
-                    AppController.splshinterstialAd.show_Interstial_Ad(this) {
-                        binding.adloadingscreen.isVisible = false
-                        recover(imageDialog, file)
-                    }
-                } else {
-                    recoverShowAutoECPM(imageDialog, file)
+        binding.adloadingscreen.isVisible = true
+        AppController.splshinterstialAd.loadInterStialAd(
+            this, adId
+        ) { isLoaded ->
+            if (isLoaded) {
+                AppController.splshinterstialAd.show_Interstial_Ad(this) {
+                    binding.adloadingscreen.isVisible = false
+                    recover(imageDialog, file)
                 }
+            } else {
+                recoverShowAutoECPM(imageDialog, file)
             }
         }
     }
 
     private fun recoverShowAutoECPM(imageDialog: AlertDialog, file: File) {
-        val adSettings = AppSharedPref.adSettings
         val adId = AdDatabaseUtil.getAdmobInterstitialAdId(this)
 
-        if (adSettings.addSettings?.AdmobInt != true) {
-
-        } else {
-            binding.adloadingscreen.isVisible = true
-            AppController.splshinterstialAd.loadInterStialAd(
-                this, adId
-            ) {
-                AppController.splshinterstialAd.show_Interstial_Ad(this) {
-                    binding.adloadingscreen.isVisible = false
-                    recover(imageDialog, file)
-                }
+        binding.adloadingscreen.isVisible = true
+        AppController.splshinterstialAd.loadInterStialAd(
+            this, adId
+        ) {
+            AppController.splshinterstialAd.show_Interstial_Ad(this) {
+                binding.adloadingscreen.isVisible = false
+                recover(imageDialog, file)
             }
         }
     }

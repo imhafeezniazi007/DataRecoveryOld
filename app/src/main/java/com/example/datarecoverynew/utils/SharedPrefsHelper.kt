@@ -45,6 +45,8 @@ class SharedPrefsHelper(context: Context) {
             "KEY_IS_NATIVE_USE_ENABLED"
         private const val KEY_IS_BANNER_SIDE_NAV_ENABLED =
             "KEY_IS_BANNER_SIDE_NAV_ENABLED"
+        private const val KEY_IS_PREMIUM_HOW_TO_USE_ENABLED =
+            "KEY_IS_PREMIUM_HOW_TO_USE_ENABLED"
     }
 
     fun setInterstitialMediumId(key: String) {
@@ -264,6 +266,14 @@ class SharedPrefsHelper(context: Context) {
 
     fun getIsBannerSideNavEnabled(): Boolean {
         return sharedPreferences.getBoolean(KEY_IS_BANNER_SIDE_NAV_ENABLED, true)
+    }
+
+    fun setIsPremiumHowToUseEnabled(value: Boolean) {
+        sharedPreferences.edit().putBoolean(KEY_IS_PREMIUM_HOW_TO_USE_ENABLED, value).apply()
+    }
+
+    fun getIsPremiumHowToUseEnabled(): Boolean {
+        return sharedPreferences.getBoolean(KEY_IS_PREMIUM_HOW_TO_USE_ENABLED, true)
     }
 
 }
