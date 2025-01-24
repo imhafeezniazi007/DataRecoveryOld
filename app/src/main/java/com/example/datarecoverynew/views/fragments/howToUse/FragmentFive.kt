@@ -8,11 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.datarecoverynew.R
 import com.example.datarecoverynew.databinding.FragmentFiveBinding
+import com.example.datarecoverynew.utils.SharedPrefsHelper
 import com.example.datarecoverynew.views.activities.MainActivity
+import com.example.datarecoverynew.views.activities.PremiumActivity
 import com.example.datarecoverynew.views.activities.SelectLanguagesActivity
 
 class FragmentFive : Fragment() {
     private val binding by lazy { FragmentFiveBinding.inflate(layoutInflater) }
+    private val sharedPrefsHelper by lazy { SharedPrefsHelper(requireContext()) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,9 +35,18 @@ class FragmentFive : Fragment() {
         binding.btnBack.setOnClickListener { requireActivity().onBackPressedDispatcher.onBackPressed() }
 
         binding.btnNext.setOnClickListener {
-            startActivity(Intent(requireActivity(), MainActivity::class.java))
-            requireActivity().finish()
+            if (isPremiumHowToUseEnabled()) {
+                startActivity(Intent(requireActivity(), PremiumActivity::class.java))
+                requireActivity().finish()
+            } else {
+                startActivity(Intent(requireActivity(), MainActivity::class.java))
+                requireActivity().finish()
+            }
         }
 
+    }
+
+    private fun isPremiumHowToUseEnabled(): Boolean {
+        return sharedPrefsHelper.getIsPremiumHowToUseEnabled()
     }
 }

@@ -1,139 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defaults>
   <entry>
-    <key>isBannerUseEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>isAppOpenEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>isSavedImagesNativeEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>isSavedVideosNativeEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>isNativeDuplicateDialogEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>isHomeBannerEnabled</key>
+    <key>isPremiumHowToUseEnabled</key>
     <value>true</value>
   </entry>
   <entry>
     <key>interstitialHighRate</key>
-    <value>ca-app-pub-7657493298294112/5401463540</value>
-  </entry>
-  <entry>
-    <key>nativeLargeAdId</key>
-    <value>ca-app-pub-7657493298294112/2775300205</value>
-  </entry>
-  <entry>
-    <key>isHomeNativeEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>isScanAudiosNativeEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>nativeAdId</key>
-    <value>ca-app-pub-7657493298294112/6464696999</value>
-  </entry>
-  <entry>
-    <key>isSavedAudioNativeEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>isBannerSideNavEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>isNativeAdEnabled</key>
-    <value>true</value>
+    <value>ca-app-pub-8431988213576616/1356294796</value>
   </entry>
   <entry>
     <key>isNativeDuplicateFragmentEnabled</key>
     <value>true</value>
   </entry>
   <entry>
-    <key>interstitialAdId</key>
-    <value>ca-app-pub-7657493298294112/1165835527</value>
-  </entry>
-  <entry>
-    <key>isScanVideosNativeEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>facebookNativeId</key>
-    <value>1008480713750761_1158891462043018</value>
-  </entry>
-  <entry>
-    <key>facebookBannerId</key>
-    <value>1008480713750761_1158890838709747</value>
-  </entry>
-  <entry>
-    <key>isNativeScanningDialogEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>isNativeUseEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>isNativeExitEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>isInterstitialAdEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>appOpenAdId</key>
-    <value>ca-app-pub-7657493298294112/4737180764</value>
-  </entry>
-  <entry>
-    <key>isSavedFilesNativeEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>isBannerAdEnabled</key>
-    <value>false</value>
-  </entry>
-  <entry>
-    <key>isFacebookInterstitialEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>isNativeSavedFragmentEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
     <key>interstitialMediumRate</key>
-    <value>ca-app-pub-7657493298294112/6868520085</value>
+    <value>ca-app-pub-8431988213576616/8963026926</value>
   </entry>
   <entry>
-    <key>isNativeSavedEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>isScanImagesNativeEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>isFacebookBannerEnabled</key>
-    <value>true</value>
-  </entry>
-  <entry>
-    <key>bannerAdId</key>
-    <value>ca-app-pub-7657493298294112/4805697639</value>
-  </entry>
-  <entry>
-    <key>isScanFilesNativeEnabled</key>
+    <key>isHomeBannerEnabled</key>
     <value>true</value>
   </entry>
   <entry>
@@ -141,15 +25,111 @@
     <value>true</value>
   </entry>
   <entry>
-    <key>facebookInterstitialId</key>
-    <value>1008480713750761_1158891235376374</value>
+    <key>isNativeScanningDialogEnabled</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>isScanVideosNativeEnabled</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>isScanAudiosNativeEnabled</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>bannerAdId</key>
+    <value>ca-app-pub-8431988213576616/7315803720</value>
+  </entry>
+  <entry>
+    <key>isHomeNativeEnabled</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>isSavedImagesNativeEnabled</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>isNativeDuplicateDialogEnabled</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>isNativeUseEnabled</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>isNativeSavedEnabled</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>isAppOpenEnabled</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>isScanImagesNativeEnabled</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>appOpenAdId</key>
+    <value>ca-app-pub-8431988213576616/7363937002</value>
+  </entry>
+  <entry>
+    <key>interstitialDefaultRate</key>
+    <value>ca-app-pub-8431988213576616/3655760314</value>
+  </entry>
+  <entry>
+    <key>homeinterstitial_id</key>
+    <value>ca-app-pub-8178147541239613/8022799944</value>
+  </entry>
+  <entry>
+    <key>keyNative</key>
+    <value>ca-app-pub-8431988213576616/1029596978</value>
+  </entry>
+  <entry>
+    <key>interstitial_id</key>
+    <value>ca-app-pub-8178147541239613/8022799944</value>
   </entry>
   <entry>
     <key>rewardedAdId</key>
-    <value>ca-app-pub-7657493298294112/8247118738</value>
+    <value>ca-app-pub-8431988213576616/1851724058</value>
   </entry>
   <entry>
-    <key>showPremium</key>
-    <value>false</value>
+    <key>banner_id</key>
+    <value>ca-app-pub-8178147541239613/5097199806</value>
+  </entry>
+  <entry>
+    <key>savedinterstitial_id</key>
+    <value>ca-app-pub-8178147541239613/8022799944</value>
+  </entry>
+  <entry>
+    <key>isScanFilesNativeEnabled</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>isSavedVideosNativeEnabled</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>isBannerSideNavEnabled</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>duplicateinterstitial_id</key>
+    <value>ca-app-pub-8178147541239613/8022799944</value>
+  </entry>
+  <entry>
+    <key>isSavedAudioNativeEnabled</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>isNativeSavedFragmentEnabled</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>isSavedFilesNativeEnabled</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>isNativeExitEnabled</key>
+    <value>true</value>
   </entry>
 </defaults>

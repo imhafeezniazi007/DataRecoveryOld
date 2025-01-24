@@ -138,72 +138,57 @@ class SavedFragment : Fragment() {
 
     private fun showHighECPM(intent: Activity) {
         Log.d("inter_ecpm", "showHighECPM: ")
-        val adSettings = AppSharedPref.adSettings
         val adId = sharedPrefsHelper.getInterstitialHighId()
 
-        if (adSettings.addSettings?.AdmobInt != true) {
-
-        } else {
-            binding.adloadingscreen.isVisible = true
-            AppController.splshinterstialAd.loadInterStialAd(
-                requireContext(), adId
-            ) { isLoaded ->
-                if (isLoaded) {
-                    appOpenAdViewModel.updateAdStatus(true, "Saved Fragment")
-                    AppController.splshinterstialAd.show_Interstial_Ad(requireActivity()) {
-                        binding.adloadingscreen.isVisible = false
-                        appOpenAdViewModel.updateAdStatus(false, "Saved Fragment")
-                        proceed(intent)
-                    }
-                } else {
-                    showMediumECPM(intent)
-                }
-            }
-        }
-    }
-
-    private fun showMediumECPM(intent: Activity) {
-        Log.d("inter_ecpm", "showMediumECPM: ")
-        val adSettings = AppSharedPref.adSettings
-
-        val adId = sharedPrefsHelper.getInterstitialMediumId()
-
-        if (adSettings.addSettings?.AdmobInt != true) {
-
-        } else {
-            AppController.splshinterstialAd.loadInterStialAd(
-                requireContext(), adId
-            ) { isLoaded ->
-                if (isLoaded) {
-                    appOpenAdViewModel.updateAdStatus(true, "Saved Fragment")
-                    AppController.splshinterstialAd.show_Interstial_Ad(requireActivity()) {
-                        binding.adloadingscreen.isVisible = false
-                        appOpenAdViewModel.updateAdStatus(false, "Saved Fragment")
-                        proceed(intent)
-                    }
-                } else {
-                    showAutoECPM(intent)
-                }
-            }
-        }
-    }
-
-    private fun showAutoECPM(intent: Activity) {
-        val adSettings = AppSharedPref.adSettings
-        val adId = AdDatabaseUtil.getAdmobInterstitialAdId(requireContext())
-
-        if (adSettings.addSettings?.AdmobInt != true) {
-
-        } else {
-            AppController.splshinterstialAd.loadInterStialAd(
-                requireContext(), adId
-            ) {
+        binding.adloadingscreen.isVisible = true
+        AppController.splshinterstialAd.loadInterStialAd(
+            requireContext(), adId
+        ) { isLoaded ->
+            if (isLoaded) {
                 appOpenAdViewModel.updateAdStatus(true, "Saved Fragment")
                 AppController.splshinterstialAd.show_Interstial_Ad(requireActivity()) {
                     binding.adloadingscreen.isVisible = false
                     appOpenAdViewModel.updateAdStatus(false, "Saved Fragment")
                     proceed(intent)
                 }
+            } else {
+                showMediumECPM(intent)
+            }
+        }
+    }
+
+    private fun showMediumECPM(intent: Activity) {
+        Log.d("inter_ecpm", "showMediumECPM: ")
+
+        val adId = sharedPrefsHelper.getInterstitialMediumId()
+
+        AppController.splshinterstialAd.loadInterStialAd(
+            requireContext(), adId
+        ) { isLoaded ->
+            if (isLoaded) {
+                appOpenAdViewModel.updateAdStatus(true, "Saved Fragment")
+                AppController.splshinterstialAd.show_Interstial_Ad(requireActivity()) {
+                    binding.adloadingscreen.isVisible = false
+                    appOpenAdViewModel.updateAdStatus(false, "Saved Fragment")
+                    proceed(intent)
+                }
+            } else {
+                showAutoECPM(intent)
+            }
+        }
+    }
+
+    private fun showAutoECPM(intent: Activity) {
+        val adId = AdDatabaseUtil.getAdmobInterstitialAdId(requireContext())
+
+        AppController.splshinterstialAd.loadInterStialAd(
+            requireContext(), adId
+        ) {
+            appOpenAdViewModel.updateAdStatus(true, "Saved Fragment")
+            AppController.splshinterstialAd.show_Interstial_Ad(requireActivity()) {
+                binding.adloadingscreen.isVisible = false
+                appOpenAdViewModel.updateAdStatus(false, "Saved Fragment")
+                proceed(intent)
             }
         }
     }

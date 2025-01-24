@@ -131,78 +131,63 @@ class DuplicateFragment : Fragment() {
 
     private fun showHighECPM(intent: String) {
         Log.d("inter_ecpm", "showHighECPM: ")
-        val adSettings = AppSharedPref.adSettings
         val adId = sharedPrefsHelper.getInterstitialHighId()
 
-        if (adSettings.addSettings?.AdmobInt != true) {
-
-        } else {
-            binding.adloadingscreen.isVisible = true
-            AppController.splshinterstialAd.loadInterStialAd(
-                requireContext(),
-                adId
-            ) { isLoaded ->
-                if (isLoaded) {
+        binding.adloadingscreen.isVisible = true
+        AppController.splshinterstialAd.loadInterStialAd(
+            requireContext(),
+            adId
+        ) { isLoaded ->
+            if (isLoaded) {
+                appOpenAdViewModel.updateAdStatus(true, "Duplicate Fragment")
+                AppController.splshinterstialAd.show_Interstial_Ad(requireActivity()) {
+                    binding.adloadingscreen.isVisible = false
                     appOpenAdViewModel.updateAdStatus(true, "Duplicate Fragment")
-                    AppController.splshinterstialAd.show_Interstial_Ad(requireActivity()) {
-                        binding.adloadingscreen.isVisible = false
-                        appOpenAdViewModel.updateAdStatus(true, "Duplicate Fragment")
-                        proceed(intent)
-                    }
-                } else {
-                    showMediumECPM(intent)
+                    proceed(intent)
                 }
+            } else {
+                showMediumECPM(intent)
             }
         }
     }
 
     private fun showMediumECPM(intent: String) {
         Log.d("inter_ecpm", "showMediumECPM: ")
-        val adSettings = AppSharedPref.adSettings
 
         val adId = sharedPrefsHelper.getInterstitialMediumId()
 
-        if (adSettings.addSettings?.AdmobInt != true) {
-
-        } else {
-            binding.adloadingscreen.isVisible = true
-            AppController.splshinterstialAd.loadInterStialAd(
-                requireContext(),
-                adId
-            ) { isLoaded ->
-                if (isLoaded) {
-                    appOpenAdViewModel.updateAdStatus(true, "Duplicate Fragment")
-                    AppController.splshinterstialAd.show_Interstial_Ad(requireActivity()) {
-                        binding.adloadingscreen.isVisible = false
-                        appOpenAdViewModel.updateAdStatus(false, "Duplicate Fragment")
-                        proceed(intent)
-                    }
-                } else {
-                    showAutoECPM(intent)
-                }
-            }
-        }
-    }
-
-    private fun showAutoECPM(intent: String) {
-        Log.d("inter_ecpm", "showAutoECPM: ")
-        val adSettings = AppSharedPref.adSettings
-        val adId = AdDatabaseUtil.getAdmobInterstitialAdId(requireContext())
-
-        if (adSettings.addSettings?.AdmobInt != true) {
-
-        } else {
-            binding.adloadingscreen.isVisible = true
-            AppController.splshinterstialAd.loadInterStialAd(
-                requireContext(),
-                adId
-            ) {
+        binding.adloadingscreen.isVisible = true
+        AppController.splshinterstialAd.loadInterStialAd(
+            requireContext(),
+            adId
+        ) { isLoaded ->
+            if (isLoaded) {
                 appOpenAdViewModel.updateAdStatus(true, "Duplicate Fragment")
                 AppController.splshinterstialAd.show_Interstial_Ad(requireActivity()) {
                     binding.adloadingscreen.isVisible = false
                     appOpenAdViewModel.updateAdStatus(false, "Duplicate Fragment")
                     proceed(intent)
                 }
+            } else {
+                showAutoECPM(intent)
+            }
+        }
+    }
+
+    private fun showAutoECPM(intent: String) {
+        Log.d("inter_ecpm", "showAutoECPM: ")
+        val adId = AdDatabaseUtil.getAdmobInterstitialAdId(requireContext())
+
+        binding.adloadingscreen.isVisible = true
+        AppController.splshinterstialAd.loadInterStialAd(
+            requireContext(),
+            adId
+        ) {
+            appOpenAdViewModel.updateAdStatus(true, "Duplicate Fragment")
+            AppController.splshinterstialAd.show_Interstial_Ad(requireActivity()) {
+                binding.adloadingscreen.isVisible = false
+                appOpenAdViewModel.updateAdStatus(false, "Duplicate Fragment")
+                proceed(intent)
             }
         }
     }

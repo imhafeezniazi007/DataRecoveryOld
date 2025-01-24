@@ -32,6 +32,7 @@ class PremiumActivity : BaseActivity() {
 
     private fun clickListener() {
         binding.cancel.setOnClickListener {
+            startActivity(Intent(this@PremiumActivity, MainActivity::class.java))
             finish()
         }
         binding.planTV.setOnClickListener {
