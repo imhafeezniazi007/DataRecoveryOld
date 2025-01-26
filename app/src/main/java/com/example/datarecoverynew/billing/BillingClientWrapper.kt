@@ -16,7 +16,9 @@ import com.android.billingclient.api.Purchase
 import com.android.billingclient.api.PurchasesUpdatedListener
 import com.android.billingclient.api.QueryProductDetailsParams
 import com.android.billingclient.api.QueryPurchasesParams
+import com.example.datarecoverynew.utils.SharedPrefsHelper
 import com.subscription.ads.billing.SubscriptionsConstants.MONTHLY_SUB_ID
+import com.subscription.ads.billing.SubscriptionsConstants.YEARLY_SUB_ID
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
@@ -28,6 +30,8 @@ import kotlinx.coroutines.flow.asStateFlow
 class BillingClientWrapper(
     context: Context
 ) : PurchasesUpdatedListener, ProductDetailsResponseListener {
+
+    private val sharedPrefsHelper by lazy { SharedPrefsHelper(context) }
 
     // New Subscription ProductDetails
     private val _productWithProductDetails =
@@ -111,6 +115,18 @@ class BillingClientWrapper(
     fun queryProductDetails() {
         val params = QueryProductDetailsParams.newBuilder()
         val productList = mutableListOf<QueryProductDetailsParams.Product>()
+
+        val LIST_OF_PRODUCTS =
+            if (sharedPrefsHelper.getIsPremiumMonthlyEnabled()) {
+                listOf(
+                    MONTHLY_SUB_ID
+                )
+            } else {
+                listOf(
+                    YEARLY_SUB_ID
+                )
+            }
+
         for (product in LIST_OF_PRODUCTS) {
             productList.add(
                 QueryProductDetailsParams.Product.newBuilder()
@@ -150,6 +166,7 @@ class BillingClientWrapper(
                 }
 
             }
+
             else -> {
                 Log.i(TAG, "onProductDetailsResponse: $responseCode $debugMessage")
             }
@@ -216,11 +233,7 @@ class BillingClientWrapper(
     }
 
     companion object {
-         private const val TAG = "BillingClient"
-        private val LIST_OF_PRODUCTS =
-            listOf(
-                MONTHLY_SUB_ID
-            )
+        private const val TAG = "BillingClient"
     }
 
 

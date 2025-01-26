@@ -136,6 +136,10 @@ class SavedFragment : Fragment() {
 
     }
 
+    private fun isInterstitialEnabled(): Boolean {
+        return sharedPrefsHelper.getIsSavedFragmentInterstitialEnabled()
+    }
+
     private fun showHighECPM(intent: Activity) {
         Log.d("inter_ecpm", "showHighECPM: ")
         val adId = sharedPrefsHelper.getInterstitialHighId()
@@ -224,7 +228,7 @@ class SavedFragment : Fragment() {
     private fun clickListener() {
         binding.images.setOnClickListener {
             firebaseAnalytics.logEvent("saved_images_click", null)
-            if (Constant.userClickSavedFirstTiem && !AppPreferences.getInstance(requireContext()).isAppPurchased) {
+            if (Constant.userClickSavedFirstTiem && !AppPreferences.getInstance(requireContext()).isAppPurchased && isInterstitialEnabled()) {
                 Constant.userClickSavedFirstTiem = false
                 showHighECPM(SavedImagesActivity())
 

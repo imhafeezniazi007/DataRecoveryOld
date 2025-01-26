@@ -92,6 +92,7 @@ class SplashActivity : BaseActivity() {
                         "interstitialMediumRate"
                     )
 
+
                 val resNtvEn = remoteConfig.getBoolean("isNativeSavedEnabled")
                 val resNtvDup = remoteConfig.getBoolean("isNativeDuplicateEnabled")
                 val resHme = remoteConfig.getBoolean("isHomeNativeEnabled")
@@ -125,6 +126,24 @@ class SplashActivity : BaseActivity() {
                     remoteConfig.getBoolean("isBannerSideNavEnabled")
                 val isPremiumHowToUseEnabled =
                     remoteConfig.getBoolean("isPremiumHowToUseEnabled")
+                val isPremiumMonthlyEnabled =
+                    remoteConfig.getBoolean("isPremiumMonthlyEnabled")
+                val isScanFilesInterstitialEnabled =
+                    remoteConfig.getBoolean("isScanFilesInterstitialEnabled")
+                val isDuplicateActivityInterstitialEnabled =
+                    remoteConfig.getBoolean("isDuplicateActivityInterstitialEnabled")
+                val isScanAudiosActivityInterstitialEnabled =
+                    remoteConfig.getBoolean("isScanAudiosActivityInterstitialEnabled")
+                val isScanImagesActivityInterstitialEnabled =
+                    remoteConfig.getBoolean("isScanImagesActivityInterstitialEnabled")
+                val isScanVideosActivityInterstitialEnabled =
+                    remoteConfig.getBoolean("isScanVideosActivityInterstitialEnabled")
+                val isDuplicateFragmentInterstitialEnabled =
+                    remoteConfig.getBoolean("isDuplicateFragmentInterstitialEnabled")
+                val isHomeFragmentInterstitialEnabled =
+                    remoteConfig.getBoolean("isHomeFragmentInterstitialEnabled")
+                val isSavedFragmentInterstitialEnabled =
+                    remoteConfig.getBoolean("isSavedFragmentInterstitialEnabled")
 
                 sharedPref.setAdId(res)
                 sharedPref.setIsNativeSavedEnabled(resNtvEn)
@@ -154,6 +173,15 @@ class SplashActivity : BaseActivity() {
                 sharedPref.setIsNativeUseEnabled(isNativeUseEnabled)
                 sharedPref.setIsBannerSideNavEnabled(isBannerSideNavEnabled)
                 sharedPref.setIsPremiumHowToUseEnabled(isPremiumHowToUseEnabled)
+                sharedPref.setIsPremiumMonthlyEnabled(isPremiumMonthlyEnabled)
+                sharedPref.setIsScanFilesInterstitialEnabled(isScanFilesInterstitialEnabled)
+                sharedPref.setIsDuplicateActivityInterstitialEnabled(isDuplicateActivityInterstitialEnabled)
+                sharedPref.setIsScanAudiosActivityInterstitialEnabled(isScanAudiosActivityInterstitialEnabled)
+                sharedPref.setIsScanImagesActivityInterstitialEnabled(isScanImagesActivityInterstitialEnabled)
+                sharedPref.setIsScanVideosActivityInterstitialEnabled(isScanVideosActivityInterstitialEnabled)
+                sharedPref.setIsDuplicateFragmentInterstitialEnabled(isDuplicateFragmentInterstitialEnabled)
+                sharedPref.setIsHomeFragmentInterstitialEnabled(isHomeFragmentInterstitialEnabled)
+                sharedPref.setIsSavedFragmentInterstitialEnabled(isSavedFragmentInterstitialEnabled)
             } else {
                 remoteConfig.setDefaultsAsync(R.xml.remote_config_defaults)
 
@@ -212,6 +240,24 @@ class SplashActivity : BaseActivity() {
                     remoteConfig.getBoolean("isBannerSideNavEnabled")
                 val isPremiumHowToUseEnabled =
                     remoteConfig.getBoolean("isPremiumHowToUseEnabled")
+                val isPremiumMonthlyEnabled =
+                    remoteConfig.getBoolean("isPremiumMonthlyEnabled")
+                val isScanFilesInterstitialEnabled =
+                    remoteConfig.getBoolean("isScanFilesInterstitialEnabled")
+                val isDuplicateActivityInterstitialEnabled =
+                    remoteConfig.getBoolean("isDuplicateActivityInterstitialEnabled")
+                val isScanAudiosActivityInterstitialEnabled =
+                    remoteConfig.getBoolean("isScanAudiosActivityInterstitialEnabled")
+                val isScanImagesActivityInterstitialEnabled =
+                    remoteConfig.getBoolean("isScanImagesActivityInterstitialEnabled")
+                val isScanVideosActivityInterstitialEnabled =
+                    remoteConfig.getBoolean("isScanVideosActivityInterstitialEnabled")
+                val isDuplicateFragmentInterstitialEnabled =
+                    remoteConfig.getBoolean("isDuplicateFragmentInterstitialEnabled")
+                val isHomeFragmentInterstitialEnabled =
+                    remoteConfig.getBoolean("isHomeFragmentInterstitialEnabled")
+                val isSavedFragmentInterstitialEnabled =
+                    remoteConfig.getBoolean("isSavedFragmentInterstitialEnabled")
 
                 sharedPref.setAdId(res)
                 sharedPref.setIsNativeSavedEnabled(resNtvEn)
@@ -241,6 +287,15 @@ class SplashActivity : BaseActivity() {
                 sharedPref.setIsNativeUseEnabled(isNativeUseEnabled)
                 sharedPref.setIsBannerSideNavEnabled(isBannerSideNavEnabled)
                 sharedPref.setIsPremiumHowToUseEnabled(isPremiumHowToUseEnabled)
+                sharedPref.setIsPremiumMonthlyEnabled(isPremiumMonthlyEnabled)
+                sharedPref.setIsScanFilesInterstitialEnabled(isScanFilesInterstitialEnabled)
+                sharedPref.setIsDuplicateActivityInterstitialEnabled(isDuplicateActivityInterstitialEnabled)
+                sharedPref.setIsScanAudiosActivityInterstitialEnabled(isScanAudiosActivityInterstitialEnabled)
+                sharedPref.setIsScanImagesActivityInterstitialEnabled(isScanImagesActivityInterstitialEnabled)
+                sharedPref.setIsScanVideosActivityInterstitialEnabled(isScanVideosActivityInterstitialEnabled)
+                sharedPref.setIsDuplicateFragmentInterstitialEnabled(isDuplicateFragmentInterstitialEnabled)
+                sharedPref.setIsHomeFragmentInterstitialEnabled(isHomeFragmentInterstitialEnabled)
+                sharedPref.setIsSavedFragmentInterstitialEnabled(isSavedFragmentInterstitialEnabled)
             }
         }
 
