@@ -221,13 +221,17 @@ class DuplicateFragment : Fragment() {
         }
     }
 
+    private fun isInterstitialEnabled(): Boolean {
+        return sharedPrefsHelper.getIsDuplicateFragmentInterstitialEnabled()
+    }
+
     private fun clickListener() {
         binding.files.setOnClickListener {
             firebaseAnalytics.logEvent("duplicate_files_click", null)
 
             if (Constant.userClickDuplicateItemFirstTiem && !AppPreferences.getInstance(
                     requireContext()
-                ).isAppPurchased
+                ).isAppPurchased && isInterstitialEnabled()
             ) {
                 Constant.userClickDuplicateItemFirstTiem = false
                 showHighECPM("DuplicateFiles")

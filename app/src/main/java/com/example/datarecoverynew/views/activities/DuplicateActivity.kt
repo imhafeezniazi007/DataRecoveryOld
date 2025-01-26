@@ -244,6 +244,10 @@ class DuplicateActivity : BaseActivity() {
         clickListener(from.toString())
     }
 
+    private fun isInterstitialEnabled(): Boolean {
+        return sharedPreferences.getIsDuplicateActivityInterstitialEnabled()
+    }
+
     private fun showHighECPM(from: String) {
         Log.d("inter_ecpm", "showHighECPM: ")
         val adId = sharedPreferences.getInterstitialHighId()
@@ -304,7 +308,7 @@ class DuplicateActivity : BaseActivity() {
     private fun clickListener(from: String) {
         binding.recoverBtn.setOnClickListener {
 
-            if (Constant.userClickHomePageFirstTiem && !AppPreferences.getInstance(this).isAppPurchased) {
+            if (Constant.userClickHomePageFirstTiem && !AppPreferences.getInstance(this).isAppPurchased && isInterstitialEnabled()) {
                 Constant.userClickHomePageFirstTiem = false
                 showHighECPM(from)
             } else {

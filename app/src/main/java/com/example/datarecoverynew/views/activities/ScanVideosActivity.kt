@@ -92,6 +92,10 @@ class ScanVideosActivity : BaseActivity() {
         }
     }
 
+    private fun isInterstitialEnabled(): Boolean {
+        return sharedPreferences.getIsScanVideosActivityInterstitialEnabled()
+    }
+
 
     private fun showHighECPM() {
         Log.d("inter_ecpm", "showHighECPM: ")
@@ -152,7 +156,7 @@ class ScanVideosActivity : BaseActivity() {
 
     private fun clickListener() {
         binding.recoverBtn.setOnClickListener {
-            if (isInterAvailable) {
+            if (isInterAvailable && isInterstitialEnabled()) {
                 showHighECPM()
                 isInterAvailable = false
             } else {

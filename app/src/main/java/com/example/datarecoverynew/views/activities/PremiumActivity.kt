@@ -10,6 +10,7 @@ import com.android.billingclient.api.ProductDetails
 import com.example.datarecoverynew.base.BaseActivity
 import com.example.datarecoverynew.databinding.ActivityPremiumBinding
 import com.example.datarecoverynew.utils.AppPreferences
+import com.example.datarecoverynew.utils.SharedPrefsHelper
 import com.example.recoverydata.utils.collectLatestLifeCycleFlow
 import com.subscription.ads.billing.SubscriptionViewModel
 import com.subscription.ads.billing.SubscriptionsConstants
@@ -83,7 +84,21 @@ class PremiumActivity : BaseActivity() {
                 price = sod?.pricingPhases?.pricingPhaseList?.get(0)?.formattedPrice ?: ""
             }
         }
-        binding.tvPrice.text = "$price/Month"
+        if (isMonthlyPremiumEnabled()) {
+            binding.tvPrice.text = "$price/Month"
+            binding.tvMonth.text = "Monthly"
+            binding.tv1.text = "1 Month"
+        } else {
+            binding.tvPrice.text = "$price/Year"
+            binding.tvMonth.text = "Yearly"
+            binding.tv1.text = "1 Year"
+        }
 
+    }
+
+    private val sharedPrefsHelper by lazy { SharedPrefsHelper(this) }
+
+    private fun isMonthlyPremiumEnabled(): Boolean {
+        return sharedPrefsHelper.getIsPremiumMonthlyEnabled()
     }
 }

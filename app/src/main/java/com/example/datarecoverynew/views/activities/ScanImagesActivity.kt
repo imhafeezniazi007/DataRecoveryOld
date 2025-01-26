@@ -88,6 +88,10 @@ class ScanImagesActivity : BaseActivity() {
     }
 
 
+    private fun isInterstitialEnabled(): Boolean {
+        return sharedPreferences.getIsScanImagesActivityInterstitialEnabled()
+    }
+
     private fun showHighECPM() {
         val adId = sharedPreferences.getInterstitialHighId()
 
@@ -169,7 +173,7 @@ class ScanImagesActivity : BaseActivity() {
 
     private fun clickListener() {
         binding.recoverBtn.setOnClickListener {
-            if (isInterAvailable) {
+            if (isInterAvailable && isInterstitialEnabled()) {
                 showHighECPM()
             } else {
                 proceed()
@@ -399,7 +403,7 @@ class ScanImagesActivity : BaseActivity() {
                 .show()
         }
         recoverBtn.setOnClickListener {
-            if (isInterAvailable) {
+            if (isInterAvailable && isInterstitialEnabled()) {
                 recoverShowHighECPM(imageDialog, file)
                 isInterAvailable = false
             } else {

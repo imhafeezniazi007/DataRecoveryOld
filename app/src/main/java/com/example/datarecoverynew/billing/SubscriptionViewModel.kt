@@ -1,4 +1,3 @@
-
 package com.subscription.ads.billing
 
 import android.app.Activity
@@ -26,7 +25,7 @@ import kotlinx.coroutines.launch
 class SubscriptionViewModel(application: Application) : AndroidViewModel(application) {
     var billingClient: BillingClientWrapper = BillingClientWrapper(application)
     private var repo: SubscriptionDataRepository =
-        SubscriptionDataRepository(billingClientWrapper = billingClient)
+        SubscriptionDataRepository(application, billingClientWrapper = billingClient)
     private val _billingConnectionState = MutableLiveData(false)
     val billingConnectionState: LiveData<Boolean> = _billingConnectionState
 
@@ -240,11 +239,11 @@ class SubscriptionViewModel(application: Application) : AndroidViewModel(applica
                     tag = tag.lowercase()
                 )
             }
-        if(offers!!.isEmpty()){
+        if (offers!!.isEmpty()) {
             offers = productDetails.subscriptionOfferDetails
         }
 //        val offerToken = offers?.let { leastPricedOfferToken(it) }
-        Log.e(TAG, "buy: ${offers?.size}", )
+        Log.e(TAG, "buy: ${offers?.size}")
         val offerToken = offers?.let { leastPricedOfferToken(it) }
         val oldPurchaseToken: String
 

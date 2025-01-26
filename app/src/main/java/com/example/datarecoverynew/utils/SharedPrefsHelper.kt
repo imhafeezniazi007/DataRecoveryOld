@@ -47,6 +47,24 @@ class SharedPrefsHelper(context: Context) {
             "KEY_IS_BANNER_SIDE_NAV_ENABLED"
         private const val KEY_IS_PREMIUM_HOW_TO_USE_ENABLED =
             "KEY_IS_PREMIUM_HOW_TO_USE_ENABLED"
+        private const val KEY_IS_PREMIUM_MONTHLY_ENABLED =
+            "KEY_IS_PREMIUM_MONTHLY_ENABLED"
+        private const val KEY_IS_SCAN_FILES_INTERSTITIAL_ENABLED =
+            "KEY_IS_SCAN_FILES_INTERSTITIAL_ENABLED"
+        private const val KEY_IS_DUPLICATE_ACTIVITY_INTERSTITIAL_ENABLED =
+            "KEY_IS_DUPLICATE_ACTIVITY_INTERSTITIAL_ENABLED"
+        private const val KEY_IS_SCAN_AUDIOS_ACTIVITY_INTERSTITIAL_ENABLED =
+            "KEY_IS_SCAN_AUDIOS_ACTIVITY_INTERSTITIAL_ENABLED"
+        private const val KEY_IS_SCAN_IMAGES_ACTIVITY_INTERSTITIAL_ENABLED =
+            "KEY_IS_SCAN_IMAGES_ACTIVITY_INTERSTITIAL_ENABLED"
+        private const val KEY_IS_SCAN_VIDEOS_ACTIVITY_INTERSTITIAL_ENABLED =
+            "KEY_IS_SCAN_VIDEOS_ACTIVITY_INTERSTITIAL_ENABLED"
+        private const val KEY_IS_DUPLICATE_FRAGMENT_INTERSTITIAL_ENABLED =
+            "KEY_IS_DUPLICATE_FRAGMENT_INTERSTITIAL_ENABLED"
+        private const val KEY_IS_HOME_FRAGMENT_INTERSTITIAL_ENABLED =
+            "KEY_IS_HOME_FRAGMENT_INTERSTITIAL_ENABLED"
+        private const val KEY_IS_SAVED_FRAGMENT_INTERSTITIAL_ENABLED =
+            "KEY_IS_SAVED_FRAGMENT_INTERSTITIAL_ENABLED"
     }
 
     fun setInterstitialMediumId(key: String) {
@@ -274,6 +292,85 @@ class SharedPrefsHelper(context: Context) {
 
     fun getIsPremiumHowToUseEnabled(): Boolean {
         return sharedPreferences.getBoolean(KEY_IS_PREMIUM_HOW_TO_USE_ENABLED, true)
+    }
+
+    fun setIsPremiumMonthlyEnabled(value: Boolean) {
+        sharedPreferences.edit().putBoolean(KEY_IS_PREMIUM_MONTHLY_ENABLED, value).apply()
+    }
+
+    fun getIsPremiumMonthlyEnabled(): Boolean {
+        return sharedPreferences.getBoolean(KEY_IS_PREMIUM_MONTHLY_ENABLED, true)
+    }
+
+    fun setIsScanFilesInterstitialEnabled(value: Boolean) {
+        sharedPreferences.edit().putBoolean(KEY_IS_SCAN_FILES_INTERSTITIAL_ENABLED, value).apply()
+    }
+
+    fun getIsScanFilesInterstitialEnabled(): Boolean {
+        return sharedPreferences.getBoolean(KEY_IS_SCAN_FILES_INTERSTITIAL_ENABLED, true)
+    }
+
+    fun setIsDuplicateActivityInterstitialEnabled(value: Boolean) {
+        sharedPreferences.edit().putBoolean(KEY_IS_DUPLICATE_ACTIVITY_INTERSTITIAL_ENABLED, value)
+            .apply()
+    }
+
+    fun getIsDuplicateActivityInterstitialEnabled(): Boolean {
+        return sharedPreferences.getBoolean(KEY_IS_DUPLICATE_ACTIVITY_INTERSTITIAL_ENABLED, true)
+    }
+
+    fun setIsScanAudiosActivityInterstitialEnabled(value: Boolean) {
+        sharedPreferences.edit().putBoolean(KEY_IS_SCAN_AUDIOS_ACTIVITY_INTERSTITIAL_ENABLED, value)
+            .apply()
+    }
+
+    fun getIsScanAudiosActivityInterstitialEnabled(): Boolean {
+        return sharedPreferences.getBoolean(KEY_IS_SCAN_AUDIOS_ACTIVITY_INTERSTITIAL_ENABLED, true)
+    }
+
+    fun setIsScanImagesActivityInterstitialEnabled(value: Boolean) {
+        sharedPreferences.edit().putBoolean(KEY_IS_SCAN_IMAGES_ACTIVITY_INTERSTITIAL_ENABLED, value)
+            .apply()
+    }
+
+    fun getIsScanImagesActivityInterstitialEnabled(): Boolean {
+        return sharedPreferences.getBoolean(KEY_IS_SCAN_IMAGES_ACTIVITY_INTERSTITIAL_ENABLED, true)
+    }
+
+    fun setIsScanVideosActivityInterstitialEnabled(value: Boolean) {
+        sharedPreferences.edit().putBoolean(KEY_IS_SCAN_VIDEOS_ACTIVITY_INTERSTITIAL_ENABLED, value)
+            .apply()
+    }
+
+    fun getIsScanVideosActivityInterstitialEnabled(): Boolean {
+        return sharedPreferences.getBoolean(KEY_IS_SCAN_VIDEOS_ACTIVITY_INTERSTITIAL_ENABLED, true)
+    }
+
+    fun setIsDuplicateFragmentInterstitialEnabled(value: Boolean) {
+        sharedPreferences.edit().putBoolean(KEY_IS_DUPLICATE_FRAGMENT_INTERSTITIAL_ENABLED, value)
+            .apply()
+    }
+
+    fun getIsDuplicateFragmentInterstitialEnabled(): Boolean {
+        return sharedPreferences.getBoolean(KEY_IS_DUPLICATE_FRAGMENT_INTERSTITIAL_ENABLED, true)
+    }
+
+    fun setIsHomeFragmentInterstitialEnabled(value: Boolean) {
+        sharedPreferences.edit().putBoolean(KEY_IS_HOME_FRAGMENT_INTERSTITIAL_ENABLED, value)
+            .apply()
+    }
+
+    fun getIsHomeFragmentInterstitialEnabled(): Boolean {
+        return sharedPreferences.getBoolean(KEY_IS_HOME_FRAGMENT_INTERSTITIAL_ENABLED, true)
+    }
+
+    fun setIsSavedFragmentInterstitialEnabled(value: Boolean) {
+        sharedPreferences.edit().putBoolean(KEY_IS_SAVED_FRAGMENT_INTERSTITIAL_ENABLED, value)
+            .apply()
+    }
+
+    fun getIsSavedFragmentInterstitialEnabled(): Boolean {
+        return sharedPreferences.getBoolean(KEY_IS_SAVED_FRAGMENT_INTERSTITIAL_ENABLED, true)
     }
 
 }

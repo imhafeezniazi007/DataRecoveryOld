@@ -74,12 +74,20 @@ class ScanAudiosActivity : BaseActivity() {
         scrollListener()
     }
 
+    private fun isInterstitialEnabled(): Boolean {
+        return sharedPreferences.getIsScanAudiosActivityInterstitialEnabled()
+    }
+
     private fun clickListener() {
         binding.backIV.setOnClickListener {
             finish()
         }
         binding.recoverBtn.setOnClickListener {
-            showHighECPM()
+            if (isInterstitialEnabled()) {
+                showHighECPM()
+            } else {
+                proceed()
+            }
         }
 
         binding.viewMoreBtn.setOnClickListener {

@@ -66,6 +66,10 @@ class ScanFilesActivity : BaseActivity() {
         scrollListener()
     }
 
+    private fun isInterstitialEnabled(): Boolean {
+        return sharedPreferences.getIsScanFilesInterstitialEnabled()
+    }
+
 
     private fun showHighECPM() {
         Log.d("inter_ecpm", "showHighECPM: ")
@@ -157,7 +161,11 @@ class ScanFilesActivity : BaseActivity() {
 
     private fun clickListener() {
         binding.recoverBtn.setOnClickListener {
-            showHighECPM()
+            if (isInterstitialEnabled()) {
+                showHighECPM()
+            } else {
+                proceed()
+            }
         }
 
         binding.backIV.setOnClickListener {

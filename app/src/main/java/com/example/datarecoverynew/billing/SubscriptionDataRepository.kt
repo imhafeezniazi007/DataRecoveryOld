@@ -1,9 +1,11 @@
-
 package com.subscription.ads.billing
 
+import android.content.Context
 import com.android.billingclient.api.ProductDetails
 import com.android.billingclient.api.Purchase
+import com.example.datarecoverynew.utils.SharedPrefsHelper
 import com.subscription.ads.billing.SubscriptionsConstants.MONTHLY_SUB_ID
+import com.subscription.ads.billing.SubscriptionsConstants.YEARLY_SUB_ID
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
@@ -13,12 +15,21 @@ import kotlinx.coroutines.flow.map
  * the [BillingClientWrapper] into [Flow] data available to the viewModel.
  *
  */
-class SubscriptionDataRepository(billingClientWrapper: BillingClientWrapper) {
+class SubscriptionDataRepository(context: Context, billingClientWrapper: BillingClientWrapper) {
+
+    private val sharedPrefsHelper by lazy { SharedPrefsHelper(context) }
+
+    val LIST_OF_PRODUCTS =
+        if (sharedPrefsHelper.getIsPremiumMonthlyEnabled()) {
+            MONTHLY_SUB_ID
+        } else {
+            YEARLY_SUB_ID
+        }
 
     // Set to true when a returned purchase is an auto-renewing basic subscription.
     val hasRenewableMonthly: Flow<Boolean> = billingClientWrapper.purchases.map { purchaseList ->
         purchaseList.any { purchase ->
-            purchase.products.contains(MONTHLY_SUB_ID) && purchase.isAutoRenewing
+            purchase.products.contains(LIST_OF_PRODUCTS) && purchase.isAutoRenewing
         }
     }
 
@@ -33,7 +44,8 @@ class SubscriptionDataRepository(billingClientWrapper: BillingClientWrapper) {
 
 
     // ProductDetails for the basic subscription.
-    val basicProductDetails: Flow<List<ProductDetails>> = billingClientWrapper.productWithProductDetails
+    val basicProductDetails: Flow<List<ProductDetails>> =
+        billingClientWrapper.productWithProductDetails
 
     // List of current purchases returned by the Google PLay Billing client library.
     val purchases: Flow<List<Purchase>> = billingClientWrapper.purchases

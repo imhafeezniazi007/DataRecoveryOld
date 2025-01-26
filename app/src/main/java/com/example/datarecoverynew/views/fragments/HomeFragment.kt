@@ -236,11 +236,15 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun isInterstitialEnabled(): Boolean {
+        return sharedPrefsHelper.getIsHomeFragmentInterstitialEnabled()
+    }
+
 
     private fun clickListener() {
         binding.images.setOnClickListener {
             firebaseAnalytics.logEvent("home_image_click", null)
-            if (Constant.userClickHomePageFirstTiem && !AppPreferences.getInstance(requireContext()).isAppPurchased) {
+            if (Constant.userClickHomePageFirstTiem && !AppPreferences.getInstance(requireContext()).isAppPurchased && isInterstitialEnabled()) {
                 Constant.userClickHomePageFirstTiem = false
                 showHighECPM(ScanImagesActivity())
                 /*showAdmobInterstitial(object : DataListener {
