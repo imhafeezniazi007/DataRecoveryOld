@@ -132,8 +132,20 @@ class SavedFragment : Fragment() {
                 price = sod?.pricingPhases?.pricingPhaseList?.get(0)?.formattedPrice ?: ""
             }
         }
-        binding.tvPrice.text = "$price/Month"
+        if (isMonthlyPremiumEnabled()) {
+            binding.tvPrice.text = "$price/Month"
+            binding.tvMonth.text = "Monthly"
+            binding.tv1.text = "1 Month"
+        } else {
+            binding.tvPrice.text = "$price/Year"
+            binding.tvMonth.text = "Yearly"
+            binding.tv1.text = "1 Year"
+        }
 
+    }
+
+    private fun isMonthlyPremiumEnabled(): Boolean {
+        return sharedPrefsHelper.getIsPremiumMonthlyEnabled()
     }
 
     private fun isInterstitialEnabled(): Boolean {

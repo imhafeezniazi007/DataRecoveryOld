@@ -220,11 +220,11 @@
             app:layout_constraintTop_toTopOf="@id/guideLine" />
 
         <TextView
+            android:id="@+id/tvMonth"
             style="@style/RegularFont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_15sdp"
-            android:text="@string/yearly"
             android:textColor="?white_text_color"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="parent"
